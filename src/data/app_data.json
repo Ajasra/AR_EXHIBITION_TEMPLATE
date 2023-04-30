@@ -1,0 +1,57 @@
+{
+  "title": {
+    "en": "App name",
+    "cn": "App name"
+  },
+  "settings": {
+    "bilingual": true,
+    "pages": {
+      "default": "intro",
+      "intro": true,
+      "ar": true,
+      "gallery": true,
+      "info": true
+    },
+    "intro": {
+      "slideshow": true,
+      "start_text": {
+        "en": "Start",
+        "cn": "开始"
+      }
+    },
+    "gallery": {
+      "images": 10,
+      "video": "https://src.vasily.onl/MemoryDrift.mp4",
+      "audio": "",
+      "buttons": {
+        "video": {
+          "en": "Video",
+          "cn": "视频"
+        },
+        "audio": {
+          "en": "Audio",
+          "cn": "音频"
+        },
+        "images": {
+          "en": "Images",
+          "cn": "图片"
+        }
+      }
+    }
+  },
+
+  "menu": {
+    "en": {
+      "home": "INTRO",
+      "ar": "AR",
+      "gallery": "GALLERY",
+      "info": "PROJECT DESCRIPTION"
+    },
+    "cn": {
+      "home": "介绍",
+      "ar": "AR",
+      "gallery": "画廊",
+      "info": "项目描述"
+    }
+  }
+}

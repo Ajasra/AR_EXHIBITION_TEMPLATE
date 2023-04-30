@@ -1,0 +1,197 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /*background: black;*/
+  min-height: 100vh;
+  min-width: 100vw;
+  position: relative;
+  background: #e6d844 !important;
+}
+
+#root {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  /*overflow: hidden;*/
+  display: block;
+  background: #e6d844;
+}
+
+.loading {
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  /*overflow: hidden;*/
+  position: relative;
+  display: block;
+}
+
+.overflow-hidden {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  display: block;
+}
+
+/*INTRO PAGE*/
+.intro-container {
+  width: 100vw;
+  position: relative;
+  padding: 2em;
+  padding-top: 4em;
+  background: #e6d844;
+}
+
+.ar-button {
+  padding: 1em;
+  margin-left: 30%;
+  margin-top: 5em;
+  z-index: 999;
+}
+
+.halfOpacity {
+  opacity: 0.5;
+}
+
+.languages {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+}
+
+.sel {
+  display: flex;
+  float: left;
+}
+.active {
+  font-weight: bold;
+}
+
+.Header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  height: 4em;
+  background: rgb(230, 216, 68);
+  background: linear-gradient(
+    180deg,
+    rgba(230, 216, 68, 1) 0%,
+    rgba(230, 216, 68, 1) 50%,
+    rgba(230, 216, 68, 0) 100%
+  );
+}
+
+/* Language menu */
+.language-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 1em;
+  z-index: 100;
+}
+.language-menu .language-menu-item {
+  display: inline-block;
+  margin: 0;
+  padding: 0.24em;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+/* menu itemps at top left corner of the screen */
+.menu {
+  position: fixed;
+  top: 1em;
+  left: 0;
+  z-index: 100;
+}
+.menu .menu-item {
+  display: flex;
+  float: left;
+  margin: 0.25em;
+  padding: 0.25em;
+  font-size: 1em;
+  cursor: pointer;
+  background: #e6d844;
+  border-radius: 0.5em;
+}
+
+.svg-icon {
+  padding: 0px;
+  margin: 0px;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+#content {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  /*overflow: hidden;*/
+  position: relative;
+  display: block;
+}
+
+h2.Loading {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+}
+
+/* Gallery */
+.gallery h3 {
+  margin-top: 1em;
+}
+.gallery video {
+  max-width: 100%;
+}
+
+a {
+  color: #000;
+  font-weight: bold;
+}
+
+.bt-start {
+  left: 50%;
+  transform: translate(-50%, 0%);
+  /*width: 70%;*/
+  text-align: center;
+  z-index: 50;
+  background: chocolate;
+}
+.bt-start:hover {
+  background: chocolate;
+  transform: translate(-50%, 0%);
+  color: black;
+}
+
+.main-title{
+  padding-top: .7em;
+  padding-left: 3em;
+}
+
+@import "~react-image-gallery/styles/css/image-gallery.css";

@@ -4,17 +4,18 @@ import {
 } from "../../../utils/utils";
 import ProjectionPlane from "../PhotoPlane";
 
-// setup constant for the video
+import img_settings from "../../../data/img_settings.json";
+
+// setup space for placement
 const range = [
-  [-5, 5],
-  [1, 2],
-  [-5, 5],
+  [img_settings.space.x1, img_settings.space.x2],
+  [img_settings.space.y1, img_settings.space.y2],
+  [img_settings.space.z1, img_settings.space.z2],
 ];
-const n = randomIntFromInterval(5, 20);
-const scaleRange = [0.1, 0.6];
+const n = randomIntFromInterval(img_settings.min_images, img_settings.max_images);
+const scaleRange = [img_settings.min_scale, img_settings.max_scale];
 
 let images = [];
-let imgs = 25;
 
 // generate video elements
 for (let i = 0; i < n; i++) {
@@ -30,8 +31,9 @@ for (let i = 0; i < n; i++) {
       key={`photo-${i}`}
       position={pos}
       rotation={rot}
-      scale={[scale, scale, scale]}
-      imgs={imgs}
+      scale={[scale, scale * img_settings.aspect_ratio, scale]}
+      imgs={img_settings.files}
+      is_transparent={img_settings.is_transparent}
     />
   );
 }

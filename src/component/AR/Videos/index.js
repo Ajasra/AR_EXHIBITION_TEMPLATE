@@ -4,20 +4,21 @@ import {
   randomIntFromInterval,
 } from "../../../utils/utils";
 
-// setup constant for the video
+import video_settings from "../../../data/video_settings.json";
+
+// setup space for placement
 const range = [
-  [-5, 5],
-  [1, 1.2],
-  [-5, 3],
+  [video_settings.space.x1, video_settings.space.x2],
+  [video_settings.space.y1, video_settings.space.y2],
+  [video_settings.space.z1, video_settings.space.z2],
 ];
-const n = randomIntFromInterval(7, 13);
-// const n = 3;
+const n = randomIntFromInterval(video_settings.min_videos, video_settings.max_videos);
 
 let videos = [];
 
 // generate video elements
 for (let i = 0; i < n; i++) {
-  let v = randomIntFromInterval(1, 23);
+  let v = randomIntFromInterval(1, video_settings.files);
   let pos = [
     randomFloatFromInterval(range[0][0], range[0][1]),
     randomFloatFromInterval(range[1][0], range[1][1]),
@@ -30,8 +31,9 @@ for (let i = 0; i < n; i++) {
       key={`video-${i}`}
       position={pos}
       rotation={rot}
-      scale={[scale, scale, scale]}
+      scale={[scale, scale * video_settings.aspect_ratio, scale]}
       URL={`/assets/video/${v}.mp4`}
+      is_transparent={video_settings.is_transparent}
     />
   );
 }

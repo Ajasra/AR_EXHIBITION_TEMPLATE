@@ -13,7 +13,7 @@ let images = [];
 
 for (let i = 1; i < app_data.settings.gallery.images; i++) {
   images.push({
-    original: "/assets/images/img (" + i + ").jpg",
+    original: "/assets/images/img_" + i + ".jpg",
   });
 }
 

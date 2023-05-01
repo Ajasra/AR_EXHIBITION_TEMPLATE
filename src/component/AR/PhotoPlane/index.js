@@ -15,38 +15,38 @@ const opacityRange = [0, 1];
 let next_update = 2;
 
 function ImagePlane(props) {
-  const { opacity, image } = props;
+  const { opacity, image, is_transparent } = props;
 
   return (
     <>
       <mesh>
         <planeGeometry />
-        <meshStandardMaterial
-          toneMapped={true}
-          side={THREE.DoubleSide}
-          transparent
-          opacity={opacity}
-          map={image}
-          alphaMap={image}
-        />
-      </mesh>
-      <mesh position={[0, 0, 0.02]}>
-        <planeGeometry />
-        <meshStandardMaterial
-          toneMapped={true}
-          side={THREE.DoubleSide}
-          transparent
-          opacity={opacity * 0.5}
-          map={image}
-          alphaMap={image}
-        />
+        {is_transparent ? (
+          <meshStandardMaterial
+            toneMapped={true}
+            side={THREE.DoubleSide}
+            transparent
+            opacity={opacity}
+            map={image}
+            alphaMap={image}
+          />
+        ) : (
+          <meshStandardMaterial
+            toneMapped={true}
+            side={THREE.DoubleSide}
+            transparent
+            opacity={opacity}
+            map={image}
+          />
+        )}
+        ;
       </mesh>
     </>
   );
 }
 
 export default function ProjectionPlane(props) {
-  const { position, rotation, scale } = props;
+  const { position, rotation, scale, imgs, is_transparent } = props;
 
   const { camera } = useThree();
 
@@ -115,9 +115,9 @@ export default function ProjectionPlane(props) {
         if (next_update <= 0.05) {
           next_update = 10;
           if (curImg == 0) {
-            setImgId2(randomIntFromInterval(1, 84));
+            setImgId2(randomIntFromInterval(1, imgs));
           } else {
-            setImgId1(randomIntFromInterval(1, 84));
+            setImgId1(randomIntFromInterval(1, imgs));
           }
           setCurImg(1 - curImg);
         } else {
@@ -130,8 +130,16 @@ export default function ProjectionPlane(props) {
   return (
     <>
       <group position={position} rotation={rotation} scale={scale}>
-        <ImagePlane opacity={opacity1} image={image1} />
-        <ImagePlane opacity={1 - opacity1} image={image2} />
+        <ImagePlane
+          opacity={opacity1}
+          image={image1}
+          is_transparent={is_transparent}
+        />
+        <ImagePlane
+          opacity={1 - opacity1}
+          image={image2}
+          is_transparent={is_transparent}
+        />
       </group>
     </>
   );

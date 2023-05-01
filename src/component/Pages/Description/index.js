@@ -56,7 +56,7 @@ function DescriptionCn() {
         continue text
       </Text>
       <Center>
-        <img src="/assets/PanSH.png" width={256} />
+        <img src="/assets/img_1.png" width={256} />
       </Center>
     </>
   );

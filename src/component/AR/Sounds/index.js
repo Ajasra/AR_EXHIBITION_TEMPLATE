@@ -4,20 +4,20 @@ import {
 } from "../../../utils/utils";
 import SoundObject from "../SoundObject";
 
-// setup constant for the video
+import sound_settings from "../../../data/audio_settings.json";
+
+// setup space for placement
 const range = [
-  [-5, 5],
-  [1, 1.2],
-  [-5, 3],
+  [sound_settings.space.x1, sound_settings.space.x2],
+  [sound_settings.space.y1, sound_settings.space.y2],
+  [sound_settings.space.z1, sound_settings.space.z2],
 ];
-const n = randomIntFromInterval(7, 15);
-// const n = 3;
+const n = randomIntFromInterval(sound_settings.min_sounds, sound_settings.max_sounds);
 
 let sounds = [];
-
-// generate video elements
+// generate sound elements
 for (let i = 0; i < n; i++) {
-  let v = randomIntFromInterval(1, 26);
+  let v = randomIntFromInterval(1, sound_settings.files);
   let pos = [
     randomFloatFromInterval(range[0][0], range[0][1]),
     randomFloatFromInterval(range[1][0], range[1][1]),
@@ -32,9 +32,8 @@ for (let i = 0; i < n; i++) {
       rotation={rot}
       scale={[scale, scale, scale]}
       url={`/assets/audio/${v}.mp3`}
-      // coneInner={90}
-      // coneOuter={120}
       rollof={0.1}
+      show_weight={sound_settings.show_weight}
     />
   );
 }

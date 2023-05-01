@@ -12,6 +12,11 @@
       "gallery": true,
       "info": true
     },
+    "ar": {
+      "image": true,
+      "video": false,
+      "audio": true
+    },
     "intro": {
       "slideshow": true,
       "start_text": {

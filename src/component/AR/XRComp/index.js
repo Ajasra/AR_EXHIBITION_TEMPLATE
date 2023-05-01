@@ -7,7 +7,7 @@ import Images from "../Photos";
 import Sounds from "../Sounds";
 
 export default function XRComp(props) {
-  const { ready } = props;
+  const { ready, app_data } = props;
   const state = useThree();
 
   const [offsetSet, setOffsetSet] = useState(false);
@@ -29,12 +29,9 @@ export default function XRComp(props) {
       <ambientLight />
       <pointLight position={[10, 10, 10]} />
       <group position={offsetPos} rotation={offsetRot}>
-        {/*{!offsetSet && (*/}
-        {/*  <OffsetButton position={[0, 1.5, -2]} setOffset={setOffset} />*/}
-        {/*)}*/}
-        <Videos ready={ready} />
-        <Images ready={ready} />
-        <Sounds ready={ready} />
+          {app_data.settings.ar.video && <Videos ready={ready} app_data={app_data} /> }
+          {app_data.settings.ar.image && <Images ready={ready} app_data={app_data} /> }
+          {app_data.settings.ar.audio && <Sounds ready={ready} app_data={app_data} /> }
       </group>
       <Controllers />
       <Hands />

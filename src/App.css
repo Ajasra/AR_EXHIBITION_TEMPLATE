@@ -9,7 +9,8 @@ body {
   min-height: 100vh;
   min-width: 100vw;
   position: relative;
-  background: #e6d844 !important;
+  background: #000000 !important;
+  color: #eaeaea !important;
 }
 
 #root {
@@ -20,9 +21,8 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
-  /*overflow: hidden;*/
   display: block;
-  background: #e6d844;
+  background: inherit;
 }
 
 .loading {
@@ -39,7 +39,6 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
-  /*overflow: hidden;*/
   position: relative;
   display: block;
 }
@@ -60,7 +59,7 @@ body {
   position: relative;
   padding: 2em;
   padding-top: 4em;
-  background: #e6d844;
+  background: inherit;
 }
 
 .ar-button {
@@ -95,12 +94,12 @@ body {
   width: 100%;
   z-index: 100;
   height: 4em;
-  background: rgb(230, 216, 68);
+  background: inherit;
   background: linear-gradient(
     180deg,
-    rgba(230, 216, 68, 1) 0%,
-    rgba(230, 216, 68, 1) 50%,
-    rgba(230, 216, 68, 0) 100%
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(0, 0, 0, 0) 100%
   );
 }
 
@@ -134,7 +133,7 @@ body {
   padding: 0.25em;
   font-size: 1em;
   cursor: pointer;
-  background: #e6d844;
+  background: inherit;
   border-radius: 0.5em;
 }
 
@@ -171,7 +170,7 @@ h2.Loading {
 }
 
 a {
-  color: #000;
+  color: #eaeaea;
   font-weight: bold;
 }
 

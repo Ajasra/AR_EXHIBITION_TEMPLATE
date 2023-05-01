@@ -20,7 +20,7 @@ function App() {
         {appDetails["page"] === "intro" && <Intro app_data={app_data} />}
         {appDetails["page"] === "ar" && (
           <div className="overflow-hidden">
-            <XRScene />
+            <XRScene app_data={app_data} />
           </div>
         )}
         {appDetails["page"] === "gallery" && <Gallery />}

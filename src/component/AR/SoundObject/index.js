@@ -22,6 +22,7 @@ export default function SoundObject(props) {
     rollof = 1,
     distanceModel = "exponential",
     text = "",
+    show_weight = false,
   } = props;
 
   const sound = useRef();
@@ -110,12 +111,13 @@ export default function SoundObject(props) {
               anchorY="middle"
             >
               {text}
-              {/*{opacity.toFixed(2)}*/}
             </Text>
-            <Weight
-              opacity={1-opacity}
-              position={[0, -position[1] / scale[0], 0]}
-            />
+            {show_weight && (
+              <Weight
+                opacity={1 - opacity}
+                position={[0, -position[1] / scale[0], 0]}
+              />
+            )}
             <positionalAudio
               autoplay={false}
               ref={sound}

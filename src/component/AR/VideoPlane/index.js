@@ -10,7 +10,7 @@ const trigger_play = 2;
 const opacityRange = [0, 1];
 
 function Video(props) {
-  const { URL, position, rotation, scale } = props;
+  const { URL, position, rotation, scale, is_transparent } = props;
   const { camera } = useThree();
 
   const [distance, setDistance] = useState(0);
@@ -91,37 +91,9 @@ function Video(props) {
               >
                 <videoTexture attach="map" args={[video]} />
                 <videoTexture attach="emissiveMap" args={[video]} />
-                <videoTexture attach="alphaMap" args={[video]} />
-              </meshStandardMaterial>
-            </mesh>
-            <mesh scale={scale} position={[0, 0, 0.02]}>
-              <planeGeometry />
-              <meshStandardMaterial
-                toneMapped={true}
-                side={THREE.DoubleSide}
-                transparent
-                opacity={opacity * 0.3}
-                emissive={0xffffff}
-                emissiveIntensity={opacity * 2 * 0.03}
-              >
-                <videoTexture attach="map" args={[video]} />
-                <videoTexture attach="emissiveMap" args={[video]} />
-                <videoTexture attach="alphaMap" args={[video]} />
-              </meshStandardMaterial>
-            </mesh>
-            <mesh scale={scale} position={[0, 0, -0.01]}>
-              <planeGeometry />
-              <meshStandardMaterial
-                toneMapped={true}
-                side={THREE.DoubleSide}
-                transparent
-                opacity={opacity * 0.1}
-                emissive={0xffffff}
-                emissiveIntensity={opacity * 2 * 0.1}
-              >
-                <videoTexture attach="map" args={[video]} />
-                <videoTexture attach="emissiveMap" args={[video]} />
-                <videoTexture attach="alphaMap" args={[video]} />
+                {is_transparent && (
+                  <videoTexture attach="alphaMap" args={[video]} />
+                )}
               </meshStandardMaterial>
             </mesh>
           </group>

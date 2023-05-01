@@ -3,6 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { Suspense, useEffect, useRef, useState } from "react";
 
 import XRComp from "../XRComp";
+import app_data from "../../../data/app_data.json";
 
 function Loading() {
   return (
@@ -25,7 +26,7 @@ function Loading() {
   );
 }
 
-export default function XRScene() {
+export default function XRScene({ app_data }) {
   const [ready, setReady] = useState(false);
 
   const XRbutton = useRef();
@@ -50,7 +51,7 @@ export default function XRScene() {
 
         <Canvas>
           <XR referenceSpace="local-floor" enterOnly={true}>
-            <XRComp ready={ready} />
+            <XRComp ready={ready} app_data={app_data} />
           </XR>
         </Canvas>
       </Suspense>

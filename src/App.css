@@ -193,4 +193,8 @@ a {
   padding-left: 3em;
 }
 
+.mantine-List-itemWrapper {
+  color: #eaeaea;
+}
+
 @import "~react-image-gallery/styles/css/image-gallery.css";

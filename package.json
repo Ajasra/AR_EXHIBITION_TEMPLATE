@@ -1,6 +1,6 @@
 {
-  "name": "Memory Drift",
-  "version": "0.1.0",
+  "name": "Memory_Drift",
+  "version": "1.0",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.5",

@@ -6,7 +6,7 @@
   "settings": {
     "bilingual": true,
     "pages": {
-      "default": "intro",
+      "default": "home",
       "intro": true,
       "ar": true,
       "gallery": true,

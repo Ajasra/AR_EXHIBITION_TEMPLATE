@@ -35,6 +35,9 @@ export default function Intro({app_data}) {
 
   return (
     <Container className="intro-container">
+      
+      {/*English version*/}
+      
       {appDetails["lang"] == "en" ? (
         <>
           <Center>
@@ -94,6 +97,9 @@ export default function Intro({app_data}) {
           
         </>
       ) : (
+        
+        //   Chinese version
+        
         <>
           <Center>
             <Images />

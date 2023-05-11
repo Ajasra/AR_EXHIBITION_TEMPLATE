@@ -23,6 +23,8 @@ function Images() {
   return <ImageGallery items={images} autoPlay={true} />;
 }
 
+
+// English version
 function GalleryEng() {
   const [works1, setWorks1] = useState(false);
   const [works2, setWorks2] = useState(false);
@@ -75,6 +77,8 @@ function GalleryEng() {
   );
 }
 
+
+// Chinese version
 function GalleryCn() {
   const [works1, setWorks1] = useState(false);
   const [works2, setWorks2] = useState(false);
